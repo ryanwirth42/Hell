@@ -1,0 +1,344 @@
+//font-family: 'Roboto Condensed', sans-serif;
+
+
+@import 'general';
+
+$orange: #FFA727;
+$red: #890000;
+
+* {
+	box-sizing: border-box;
+}
+
+body { //shows height of the user, some color and padding
+height: 100vh;
+padding: 2rem;
+background-color: #343434;
+//background: rgb(37,37,37);
+//background: linear-gradient(180deg, rgba(37,37,37,1) 22%, rgba(137,0,0,1) 52%, rgba(255,167,39,1) 82%);
+}
+
+//Display initial grid for the logo and login information
+.cover {
+background: rgb(37,37,37);
+background: linear-gradient(180deg, rgba(37,37,37,1) 22%, rgba(137,0,0,1) 52%, rgba(255,167,39,1) 82%);
+transition: transform 1s;
+z-index: 1;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(4, auto);
+padding: 2rem;
+.logo { //style related to the logo on the cover
+	grid-column: 1 / span 2;
+	grid-row: 1;
+	align-self: center;
+	justify-self: center;
+	padding-bottom: 2rem;
+}
+//this is the 2fr grid item that has a img and "currently.."
+.current {
+	grid-column: 1 / span 2;
+	grid-row: 2;
+	align-self: center;
+	justify-self: center;
+	font-family: 'Roboto', sans-serif;
+	align-self: start;
+	color: #fff;
+	p .currently {
+		width: 100%
+	}
+}
+h2 {
+	margin: 0;
+	font-size: 1rem;
+	grid-column: 2;
+	align-self: end;
+}
+//this is the information coming from the console (current temp and description)
+.weather { //location of the weather on the main grid
+	grid-column: 2;
+	grid-row: 2;
+	align-self: end;
+	justify-self: center;
+	@media screen and (min-width: 40em){
+		justify-self: left;
+	}
+
+	h1 { //Style of the cover main weather
+		font-size: 4rem;
+		color: white;
+		margin: 0;
+		font-family: 'Amita', cursive;
+	}
+	h1 span { // displays the degree symbol 
+		content: "\00B0";
+	}
+	p { //style of the description of the main weather
+		margin: 0;
+		font-family: 'Roboto', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: white;
+	}
+}
+
+//login styles for lucify, including the button
+.login {
+	grid-column: 1 / span 2;
+	grid-row: 3;
+	padding-top: 3rem;
+	@media screen and (min-width: 40em) {
+		justify-self: center;
+		align-self: center;
+	}
+	h3{
+		font-family: 'Roboto', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: white;
+		margin: 0;
+		padding-top: 0.3rem;
+		font-size: 1rem;
+		
+	}
+	p {
+		font-family: 'Roboto', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 0.8rem;
+		color: #000;
+		background-color: #fff;
+		padding: 1rem;
+		border-radius: 1rem;
+		text-align: center;
+		margin: 0;
+	}	
+}
+}
+
+ button {
+ 	grid-column: 1 / span 2;
+ 		grid-row: 4;
+ 		align-self: start;
+ 		justify-self: center;
+		font-family: 'Roboto', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 0.8rem;
+		color: #000;
+		background-color: #FF0A00;
+		color: #fff;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		margin-top: 0.5rem;
+		style: none;
+		border: none;
+
+
+	}
+
+//transforms the page to the right
+.open {
+  transform: translateX(-100%);
+}
+
+//this is going to be what the user sees after the screen swipes
+.intro-weather {
+	
+	
+	height: 100%;
+	width: 100%;
+	background-color: #343434;
+	//margin-bottom: 2rem;
+	display: grid;
+	grid-template-rows: repeat(3, auto);
+	grid-template-columns: repeat(3, 1fr);
+	
+	font-family: 'Roboto Condensed', sans-serif;
+
+	h2 {
+		grid-row: 1;
+		grid-column: 1 / span 3;
+		align-self: start;
+		justify-self: center;
+		margin: 0;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: white;
+		font-size: 0.8rem;
+	}
+	h3 {
+		grid-row: 1;
+		grid-column: 1 / span 3;
+		align-self: center;
+		justify-self: center;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		color: white;
+		font-size: 2rem;
+		margin: 0;
+	}
+	h6 { 
+	grid-column: 1 / span 3;
+	grid-row: 2;
+	align-self: start;
+	justify-self: center;
+}
+//img {
+	//width: 75%;
+	//height: 75%;
+//}
+
+//high temps and low temps + sunrise sunset
+.high {
+	grid-column: 2;
+	grid-row: 2;
+	align-self: end;
+	justify-self: start;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: white;
+	font-size: 2rem;
+	font-family: 'Roboto', sans-serif;
+
+}
+.low {
+	grid-column: 2;
+	grid-row: 2;
+	align-self: end;
+	justify-self: end;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #888;
+	font-size: 2rem;
+	font-family: 'Roboto', sans-serif;
+
+}
+ .sunrise {
+	grid-row: 2;
+	grid-column: 1;
+	align-self: end;
+	justify-self: center;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-family: 'Roboto', sans-serif;
+
+}
+.sunrise:before {
+	content: "hellrise ";
+}
+.sunset {
+	grid-row: 2;
+	grid-column: 3;
+	align-self: end;
+	justify-self: center;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-family: 'Roboto', sans-serif;
+}
+.sunset:before {
+	content: "hellset "
+}
+
+//this is where the hourly weather starts
+.hourly {
+	border-top: solid;
+	grid-column: 1 / span 3;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	text-align: center;
+	color: #999;
+	font-size: 0.9rem;
+	//padding-top: 3rem;
+}
+
+}
+
+
+
+
+//this is the main weather for the user a 7 row/4c grid
+.main-weather {
+	
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: repeat(7, 1fr);
+	grid-gap: 0.2rem;
+	//font-family: 'Roboto', sans-serif;
+	font-family: 'Amita', cursive;
+	color: #fff;
+	margin-bottom: 2rem;
+
+}
+
+.day00, .day01, .day02, .day03, .day04, .day05, .day06 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	background-color:rgba(102,102,102,0.65);
+	place-items: center;
+	transition: all .2s ease-in-out;
+	img {
+		;
+	}
+	}
+	
+	.day00 {
+		grid-row: 1;
+		border-radius: 15px 15px 0px 0px;
+		background: rgb(137,0,0);
+background: linear-gradient(180deg, rgba(137,0,0,0.938813025210084) 0%, rgba(37,37,37,0.896796218487395) 0%); 
+		}
+	
+
+	.day00:hover, .day01:hover, .day02:hover, .day03:hover, .day04:hover, .day05:hover, .day06:hover { 
+	transform: scale(1.01); 
+	}
+
+	.day01 {
+		grid-row: 2;
+		background: rgb(37,37,37);
+background: linear-gradient(180deg, rgba(37,37,37,1) , rgba(137,0,0,0.8239670868347339) 83%);
+		
+
+	}
+	.day02 {
+		grid-row: 3;
+		background: rgb(137,0,0);
+background: linear-gradient(180deg, rgba(137,0,0,0.958420868347339) 100%, rgba(37,37,37,1) 100%);
+		
+	}
+	.day03 {
+		grid-row: 4;
+		background: rgb(137,0,0);
+background: linear-gradient(180deg, rgba(137,0,0,0.958420868347339) , rgba(255,167,39,0.8323704481792717) 83%);
+
+	}
+	.day04 {
+		grid-row: 5;
+		background: rgb(255,167,39);
+background: linear-gradient(180deg, rgba(255,167,39,1) 100%, rgba(137,0,0,0.958420868347339) 100%);
+	}
+	.day05 {
+		grid-row: 6;
+		background: rgb(255,167,39);
+background: linear-gradient(180deg, rgba(255,167,39,1) , rgba(255,135,36,0.8267682072829132) 83%);
+	}
+	.day06 {
+		grid-row: 7;
+		border-radius: 0px 0px 15px 15px;
+		background: rgb(255,135,36);
+background: linear-gradient(180deg, rgba(255,135,36,1) 100%, rgba(255,167,39,1) 100%);
+	}
+
+
+
+

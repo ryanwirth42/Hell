@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  padding: 2rem;
+  background-color: #343434; }
+
+.cover {
+  background: #252525;
+  background: linear-gradient(180deg, #252525 22%, #890000 52%, #ffa727 82%);
+  transition: transform 1s;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  padding: 2rem; }
+  .cover .logo {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    padding-bottom: 2rem; }
+  .cover .current {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Roboto', sans-serif;
+    align-self: start;
+    color: #fff; }
+    .cover .current p .currently {
+      width: 100%; }
+  .cover h2 {
+    margin: 0;
+    font-size: 1rem;
+    grid-column: 2;
+    align-self: end; }
+  .cover .weather {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    justify-self: center; }
+    @media screen and (min-width: 40em) {
+      .cover .weather {
+        justify-self: left; } }
+    .cover .weather h1 {
+      font-size: 4rem;
+      color: white;
+      margin: 0;
+      font-family: 'Amita', cursive; }
+    .cover .weather h1 span {
+      content: "\00B0"; }
+    .cover .weather p {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: white; }
+  .cover .login {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    padding-top: 3rem; }
+    @media screen and (min-width: 40em) {
+      .cover .login {
+        justify-self: center;
+        align-self: center; } }
+    .cover .login h3 {
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: white;
+      margin: 0;
+      padding-top: 0.3rem;
+      font-size: 1rem; }
+    .cover .login p {
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      color: #000;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      text-align: center;
+      margin: 0; }
+
+button {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+  align-self: start;
+  justify-self: center;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: #000;
+  background-color: #FF0A00;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  style: none;
+  border: none; }
+
+.open {
+  transform: translateX(-100%); }
+
+.intro-weather {
+  height: 100%;
+  width: 100%;
+  background-color: #343434;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
+  font-family: 'Roboto Condensed', sans-serif; }
+  .intro-weather h2 {
+    grid-row: 1;
+    grid-column: 1 / span 3;
+    align-self: start;
+    justify-self: center;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 0.8rem; }
+  .intro-weather h3 {
+    grid-row: 1;
+    grid-column: 1 / span 3;
+    align-self: center;
+    justify-self: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 2rem;
+    margin: 0; }
+  .intro-weather h6 {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    align-self: start;
+    justify-self: center; }
+  .intro-weather .high {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    justify-self: start;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif; }
+  .intro-weather .low {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+    justify-self: end;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif; }
+  .intro-weather .sunrise {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: end;
+    justify-self: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto', sans-serif; }
+  .intro-weather .sunrise:before {
+    content: "hellrise "; }
+  .intro-weather .sunset {
+    grid-row: 2;
+    grid-column: 3;
+    align-self: end;
+    justify-self: center;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto', sans-serif; }
+  .intro-weather .sunset:before {
+    content: "hellset "; }
+  .intro-weather .hourly {
+    border-top: solid;
+    grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem; }
+
+.main-weather {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 0.2rem;
+  font-family: 'Amita', cursive;
+  color: #fff;
+  margin-bottom: 2rem; }
+
+.day00, .day01, .day02, .day03, .day04, .day05, .day06 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: rgba(102, 102, 102, 0.65);
+  place-items: center;
+  transition: all .2s ease-in-out; }
+
+.day00 {
+  grid-row: 1;
+  border-radius: 15px 15px 0px 0px;
+  background: #890000;
+  background: linear-gradient(180deg, rgba(137, 0, 0, 0.9388130252) 0%, rgba(37, 37, 37, 0.8967962185) 0%); }
+
+.day00:hover, .day01:hover, .day02:hover, .day03:hover, .day04:hover, .day05:hover, .day06:hover {
+  transform: scale(1.01); }
+
+.day01 {
+  grid-row: 2;
+  background: #252525;
+  background: linear-gradient(180deg, #252525, rgba(137, 0, 0, 0.8239670868) 83%); }
+
+.day02 {
+  grid-row: 3;
+  background: #890000;
+  background: linear-gradient(180deg, rgba(137, 0, 0, 0.9584208683) 100%, #252525 100%); }
+
+.day03 {
+  grid-row: 4;
+  background: #890000;
+  background: linear-gradient(180deg, rgba(137, 0, 0, 0.9584208683), rgba(255, 167, 39, 0.8323704482) 83%); }
+
+.day04 {
+  grid-row: 5;
+  background: #ffa727;
+  background: linear-gradient(180deg, #ffa727 100%, rgba(137, 0, 0, 0.9584208683) 100%); }
+
+.day05 {
+  grid-row: 6;
+  background: #ffa727;
+  background: linear-gradient(180deg, #ffa727, rgba(255, 135, 36, 0.8267682073) 83%); }
+
+.day06 {
+  grid-row: 7;
+  border-radius: 0px 0px 15px 15px;
+  background: #ff8724;
+  background: linear-gradient(180deg, #ff8724 100%, #ffa727 100%); }
+
+/*# sourceMappingURL=app.css.map */
