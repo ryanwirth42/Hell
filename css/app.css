@@ -254,6 +254,6 @@ button {
   grid-row: 7;
   border-radius: 0px 0px 15px 15px;
   background: #ff8724;
-  background: linear-gradient(180deg, #ff8724 100%, #ffa727 100%); }
+  background: linear-gradient(180deg, #ff8724 100%, #ff8724 100%); }
 
 /*# sourceMappingURL=app.css.map */
